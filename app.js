@@ -17,63 +17,57 @@ function solveQuestion() {
     let answer = "";
 
     if (q.includes("binary search")) {
+        
+answer = `
+<h3>Binary Search</h3>
 
-        answer = `
-        <h3>Binary Search</h3>
-        <p>Binary Search is a searching algorithm
-        used to find an element in a sorted array.</p>
-        <p><b>Working:</b></p>
-        <ol>
-            <li>Find the middle element.</li>
-            <li>Compare it with the target.</li>
-            <li>If target is smaller, search left half.</li>
-            <li>If target is larger, search right half.</li>
-        </ol>
-        <p><b>Time Complexity:</b> O(log n)</p>
-        `;
+<p><b>Definition:</b> Binary Search is a searching
+algorithm used to find an element in a sorted array.</p>
 
-    } else if (q.includes("stack")) {
+<h4>Working Steps:</h4>
+<ol>
+<li>Find the middle element.</li>
+<li>Compare the middle element with the target.</li>
+<li>If both are equal, return its index.</li>
+<li>If target is smaller, search the left half.</li>
+<li>If target is larger, search the right half.</li>
+<li>Repeat until the element is found or the search range becomes empty.</li>
+</ol>
 
-        answer = `
-        <h3>Stack Data Structure</h3>
-        <p>Stack is a linear data structure
-        that follows LIFO (Last In First Out).</p>
-        <p>Example: A stack of plates.</p>
-        <p><b>Operations:</b> Push, Pop, Peek.</p>
-        `;
+<h4>Example:</h4>
+<p>Array: [10, 20, 30, 40, 50]</p>
+<p>Target: 40</p>
+<ol>
+<li>Middle element = 30</li>
+<li>40 is greater than 30, so search right half.</li>
+<li>Middle element = 40</li>
+<li>Element found at index 3 (position 4).</li>
+</ol>
 
-    } else if (q.includes("tree")) {
+<h4>Algorithm:</h4>
+<pre>
+low = 0
+high = n - 1
 
-        answer = `
-        <h3>Tree Data Structure</h3>
-        <p>A tree is a non-linear data structure
-        made up of nodes and edges.</p>
-        <p><b>Important terms:</b>
-        Root, Parent, Child, Leaf and Subtree.</p>
-        `;
+while low <= high:
+    mid = (low + high) // 2
 
-    } else {
+    if arr[mid] == target:
+        return mid
+    else if arr[mid] < target:
+        low = mid + 1
+    else:
+        high = mid - 1
 
-        answer = `
-        <h3>Question Received!</h3>
-        <p>Your question is:
-        ${escapeHTML(question)}</p>
-        <p>This is a demo AI solver.
-        Detailed AI answers will be added in the next versions.</p>
-        `;
-    }
+return -1
+</pre>
 
-    answerBox.innerHTML = answer;
-}
+<p><b>Best Case:</b> O(1)</p>
+<p><b>Average Case:</b> O(log n)</p>
+<p><b>Worst Case:</b> O(log n)</p>
+<p><b>Space Complexity:</b> O(1) for iterative implementation.</p>
 
-function escapeHTML(text) {
-    return text.replace(/[&<>"']/g, function(char) {
-        return {
-            "&": "&amp;",
-            "<": "&lt;",
-            ">": "&gt;",
-            '"': "&quot;",
-            "'": "&#039;"
-        }[char];
-    });
-}
+<p><b>Conclusion:</b> Binary Search is efficient for
+searching elements in a sorted array.</p>
+`;
+
