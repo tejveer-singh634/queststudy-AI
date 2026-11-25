@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestStudy AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>QuestStudy AI</h1>
+        <p>Your Smart AI Learning Companion</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Learn Smarter, Not Harder!</h2>
+            <p>Ask any question and get a simple explanation.</p>
+
+            <textarea
+                id="question"
+                placeholder="Enter your study question here..."
+            ></textarea>
+
+            <button onclick="solveQuestion()">
+                Solve My Question
+            </button>
+
+            <div id="answer"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
